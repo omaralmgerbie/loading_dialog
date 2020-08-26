@@ -46,6 +46,9 @@ class LoadingDialog {
   /// Message字体大小
   final double textSize;
 
+  /// Message align
+  final TextAlign textAlign;
+
   /// Message字色
   final Color textColor;
 
@@ -66,6 +69,7 @@ class LoadingDialog {
     this.barrierColor = Colors.black54,
     this.barrierDismissible = true,
     this.style,
+    this.textAlign,
     this.size = 40,
     this.width = 120,
     this.height = 120.0,
@@ -151,7 +155,7 @@ class LoadingDialog {
             ? EdgeInsets.only(top: padding)
             : EdgeInsets.only(left: padding),
         child: Text(
-          loadingMessage ?? "",
+          loadingMessage ?? "",textAlign: textAlign,
           style: TextStyle(
             color: textColor,
             fontSize: textSize,
